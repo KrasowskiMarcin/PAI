@@ -1,30 +1,33 @@
 <html>
 <body>
-    <form action="./index.php" method="POST">
-        <p>Login: </p>
-        <p><input type="text" name="login"/></p>
-		<p>Haslo: </p>
-        <p><input type="password" name="passwd"/></p>
-		<p> Zapamiętaj mnie: </p>
-		<input type="checkbox" name="remember" value=1 />Tak
-		<input type="checkbox" name="remember" value=2 />Nie
-        <p><input type="submit" /></p>
-    </form>
+	<center>
+		<form action="./index.php" method="POST">
+			<p>Login: </p>
+			<p><input type="text" name="login"/></p>
+			<p>Haslo: </p>
+			<p><input type="password" name="passwd"/></p>
+			<p> Zapamiętaj mnie: </p>
+			<input type="checkbox" name="remember" value=1 />Tak
+			<input type="checkbox" name="remember" value=2 />Nie
+			<p><input type="submit" /></p>
+		</form>
+	</center>
 </body>
 </html>
 
 <?php
 $hostname = 'localhost';
 $databse = 'bd';
+$username = 'root';
+$password = '';
 if(isset($_POST['login']) && isset($_POST['passwd']) && isset($_POST['remember'])){
-	$username = $_POST['login'];
-	$password = $_POST['passwd'];
+	$imie = $_POST['login'];
+	$nazwisko = $_POST['passwd'];
 	$remember = $_POST['remember'];
 	
 	$conn = mysqli_connect($hostname, $username, $password, $databse);
 	
-	$imie = "Jakub";
-	$nazwisko = "Piskorowski";
+	
 	$Adres_email = "jakubpiskorowski@gmail.com";
 
 	$sql = "INSERT INTO `klient`(`id`,`Imie`, `Nazwisko`, `Adres_email`, `remember`)

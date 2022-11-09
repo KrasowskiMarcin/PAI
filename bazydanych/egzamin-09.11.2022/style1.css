@@ -1,0 +1,42 @@
+*{
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+header, footer{
+    background-color: #00838F;
+    padding: 5px;
+    text-align: center;
+    font-size: 130%;
+}
+
+.leftup, .leftdown{
+    background-color: #EFEFEF;
+    width: 55%;
+}
+
+.leftup{
+    height: 150px;
+    position: relative;
+    float:left;
+}
+
+.leftdown{
+    position: relative;
+    float: left;
+    height: 300px;
+}
+
+.right{
+    position: relative;
+    float: right;
+    background-color: #4FB3BF;
+    width: 45%;
+    height: 450px;
+    text-align: center;
+}
+
+.right img{
+    margin:20px;
+    box-shadow: 10px 10px 7px dimgray; /* musialem sprawdzic skladnie argumentow box-shadow */
+}
+/* height: 150px; */
