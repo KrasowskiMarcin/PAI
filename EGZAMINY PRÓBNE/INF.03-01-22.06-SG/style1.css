@@ -9,6 +9,10 @@ header, footer{
     font-size: 130%;
 }
 
+li{
+    list-style-type: decimal;
+}
+
 .leftup, .leftdown{
     background-color: #EFEFEF;
     width: 55%;
@@ -24,6 +28,7 @@ header, footer{
     position: relative;
     float: left;
     height: 300px;
+    /* display: table; */
 }
 
 .right{
@@ -38,5 +43,25 @@ header, footer{
 .right img{
     margin:20px;
     box-shadow: 10px 10px 7px dimgray; /* musialem sprawdzic skladnie argumentow box-shadow */
+}
+
+.leftdown table, tr, th{
+    border: 1px solid  #4FB3BF;
+    border-collapse: collapse;
+    text-align: left;
+}
+
+.leftdown tr,th{
+    padding: 4px;
+}
+
+.leftdown tr:hover{
+    background-color: #4FB3BF;
+}
+
+
+.leftdown table{
+    margin: auto;
+    width: 80%;
 }
 /* height: 150px; */

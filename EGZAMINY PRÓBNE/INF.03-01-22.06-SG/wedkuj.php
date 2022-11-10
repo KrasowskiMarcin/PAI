@@ -28,28 +28,41 @@
         <?php
             $query = mysqli_query($connection, $sql2);
             while($row = mysqli_fetch_row($query)){
+                echo "<li>";
                 echo $row[0].'  pływa w rzece '.$row[1].', '.$row[2];
-                echo "<br>";
+                echo "</li>";
             }
         ?>
     </section>
     <section class="leftdown">
         <h3>Ryby drapieżne naszych wód</h3>
-        <?php
-            $query = mysqli_query($connection, $sql1);
-
-            while($row = mysqli_fetch_row($query)){
-                echo $row[0].' '.$row[1].' '.$row[2];
-                echo "<br>";
-            }
-        ?>
+        <table>
+            <tr>
+                <th>L.p.</th>
+                <th>Gatunek</th>
+                <th>Występowanie</th>
+            </tr>
+            <?php
+                $query = mysqli_query($connection, $sql1);
+                while($row = mysqli_fetch_row($query)){
+                echo 
+                "<tr>
+                    <th>$row[0]</th>
+                    <th>$row[1]</th>
+                    <th>$row[2]</th>
+                </tr>";
+                }
+            ?>
+        </table>
     </section>
     <footer><p>„Stronę wykonał: Marcin Krasowski"</p></footer>
 </body>
 </html>
 
+<!-- echo '<tr>'.'<th>'.$row[0].'</th>'.'</tr>'; -->
 
-
-
+<?php
+mysqli_close($connection);
+?>
 
 
