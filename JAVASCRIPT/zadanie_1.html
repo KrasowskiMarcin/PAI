@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="id1">Tekst pierwszy</p>
+        <button onclick="changeColor(1)">Zmień kolor tekstu</button>
+        <button onclick="changeFormatting(1)">Zmień formatowanie tekstu</button>
+        <button onclick="removeFormatting(1)">Usuń formatowanie</button>
+
+    <p id="id2">Tekst drugi</p>
+        <button onclick="changeColor(2)">Zmień kolor tekstu</button>
+        <button onclick="changeFormatting(2)">Zmień formatowanie tekstu</button>
+        <button onclick="removeFormatting(2)">Usuń formatowanie</button>
+
+    <script>
+        let text1 = document.getElementById('id1');
+        let text2 = document.getElementById('id2');
+        
+        function changeColor(id){
+            if(id == 1){
+                text1.style.color= "green";
+            }else{
+                text2.style.color= "red";
+            }
+        }
+        function changeFormatting(id){
+            if(id == 1){
+                text1.style.fontWeight = "bold";
+            }else{
+                text2.style.fontWeight = "bold";
+            }
+        }
+        function removeFormatting(id){
+            if(id == 1){
+                text1.style.fontWeight = "normal";
+                text1.style.color= "black";
+            }else{
+                text2.style.fontWeight = "normal";
+                text2.style.color= "black";
+            }
+        }
+    </script>
+</body>
+</html>

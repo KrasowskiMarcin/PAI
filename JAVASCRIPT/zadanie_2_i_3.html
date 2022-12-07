@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="title">
+        Posiadasz serwerów: 
+    </div>
+    <div id="serversCount">
+       0
+    </div>
+    <button onclick="buy()">Kup</button>
+    <button onclick="sell()">Sprzedaj</button>
+
+    <button onclick="buyMultiple()">Kup wiele</button>
+    <button onclick="sellMultiple()">Sprzedaj wiele</button>
+
+    <script>
+        function buy(){
+            count = parseInt(document.getElementById('serversCount').innerHTML);
+            document.getElementById('serversCount').innerHTML = count+1;
+
+            changeColor(count);
+        }
+        function sell(){
+            count = parseInt(document.getElementById('serversCount').innerHTML);
+            if(count > 0){
+                document.getElementById('serversCount').innerHTML = count-1;
+            }
+            changeColor(count);
+        }
+        
+        function buyMultiple(){
+            let number = parseInt(prompt("Podaj ilość, którą chciałbyś kupić", "0"));
+            count = parseInt(document.getElementById('serversCount').innerHTML);
+            document.getElementById('serversCount').innerHTML = count + number;
+            changeColor(count);
+        }
+        function sellMultiple(){
+            let number = parseInt(prompt("Podaj ilość, którą chciałbyś sprzedać", "0"));
+            count = parseInt(document.getElementById('serversCount').innerHTML);
+            if(number <= count){
+                document.getElementById('serversCount').innerHTML = count-number;
+            }
+            changeColor(count);
+        }
+
+        function changeColor(count){
+                // zmiana koloru
+                if(count < 2){
+                document.getElementById('title').style.color = "red";
+                }else if(count > 2 && count < 5){
+                    document.getElementById('title').style.color = "yellow";
+                }else if(count >= 5){
+                    document.getElementById('title').style.color = "green";
+                }
+        }
+    </script>
+</body>
+</html>
