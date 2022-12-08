@@ -1,0 +1,15 @@
+.leftHeader{
+    width: 75%;
+    height: 150px;
+    font-size: 200%;
+    text-align: center;
+    background-color: black;
+    float: left;
+}
+
+.rightHeader{
+    width: 25%;
+    height: 150px;
+    background-color: blue;
+    float: right;
+}
