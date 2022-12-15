@@ -10,7 +10,21 @@
 
     <section class="baner"> <h1>Strefa zamówień</h1> </section>
 
-    <section class="mainLeft"></section>
+    <section class="mainLeft">
+            <p>Numer kształtu: </p>
+            <input type="number" id="numerKsztaltu">
+            <p>Skomponuj swój kolor, podaj RGB</p>
+            R <input type="number" id="r">
+            G <input type="number" id="g">
+            B <input type="number" id="b">
+            <br>
+            <input type="submit" value="zamówienie" onclick="skrypt()">
+
+        <br>
+        <p id="twojeZamowienie">Twoje zamówienie</p>
+        <button id="colorButton" onclick="changeColor()"> Kolor </button>
+
+    </section>
     <section class="mainRight">
         <h2>Nasza oferta</h2>
 
@@ -32,5 +46,44 @@
     </section>
 
     <footer>Autor strony: <b>PESEL</b></footer>
+
+    <script>
+        function skrypt(){
+            checkKsztalt();
+            changeColor();
+        }
+
+        function checkKsztalt(){
+            var twojeZamowienie = document.getElementById('twojeZamowienie');
+            var numerKsztaltu = parseInt(document.getElementById('numerKsztaltu').value);
+            switch(numerKsztaltu){
+                case 1:
+                twojeZamowienie.innerHTML = "Twoje zamówienie to cytryna";
+                break;
+
+                case 2:
+                twojeZamowienie.innerHTML = "Twoje zamówienie to liść";
+                break;
+
+                case 3:
+                twojeZamowienie.innerHTML = "Twoje zamówienie to banan";
+                break;
+
+                default:
+                twojeZamowienie.innerHTML = "Podaj kształt z zakresu 1-3";
+                break;
+            }
+        }
+
+        function changeColor(){
+            var r = parseInt(document.getElementById("r").value);
+            var g = parseInt(document.getElementById("g").value);
+            var b = parseInt(document.getElementById("b").value);
+
+            var colorButton = document.getElementById("colorButton");
+            colorButton.style.backgroundColor = 'rgb(' + r + ',' + g + ',' + b + ')';
+        }
+
+    </script>
 </body>
 </html>
