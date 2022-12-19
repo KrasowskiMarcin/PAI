@@ -1,0 +1,11 @@
+1.
+INSERT INTO czytelnicy (imie, nazwisko, kod) VALUES ('Anna', 'Michalak', 'an05mi')
+
+2.
+SELECT imie, nazwisko FROM czytelnicy
+
+3.
+SELECT tytul FROM ksiazki WHERE id_autor = 7
+
+4.
+SELECT nazwisko, count(ksiazki.tytul) as ilosc FROM autorzy INNER JOIN ksiazki ON ksiazki.id_autor = autorzy.id GROUP BY(autorzy.nazwisko);
