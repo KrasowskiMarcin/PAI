@@ -1,0 +1,15 @@
+Kwerenda 1
+SELECT imie, nazwisko, opis, zdjecie from osoby WHERE Hobby_id IN(1,2,6)
+
+Kwerenda 2
+SELECT osoby.id, osoby.nazwisko, hobby.nazwa FROM osoby JOIN hobby ON osoby.Hobby_id = hobby.id WHERE osoby.rok_urodzenia > 2000
+
+Kwerenda 3
+SELECT id, nazwisko, zdjecie FROM osoby WHERE imie = "Monika" LIMIT 5;
+
+Kwerenda 4
+CREATE TABLE wpisy(
+    id int PRIMARY KEY AUTO_INCREMENT NOT NULL,
+    wpis VARCHAR(255),
+    uzytkownik_id int NOT NULL
+);

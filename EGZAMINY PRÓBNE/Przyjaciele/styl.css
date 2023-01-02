@@ -1,0 +1,65 @@
+*{
+    font-family: Georgia;
+}
+
+header{
+    background-color: #005B4F;
+    color: white;
+    text-align: center;
+    font-size: 50%;
+    height: 20px;
+}
+
+.main{
+    background-color: #E1E2E1;
+    height: 400px;
+    padding: 20px;
+    overflow: scroll;
+}
+
+.footerLeft, .footerRight{
+    background-color: #005B4F;
+    color: white;
+    text-align: center;
+    width: 50%;
+    height: 20px;
+}
+
+.footerLeft{
+    float: left;
+}
+
+.footerRight{
+    float: right;
+}
+
+h2{
+    text-align: center;
+    background-color: #00897B;
+}
+
+a{
+    color: white;
+}
+
+img{
+    padding: 20px;
+    border-radius: 100%;
+}
+
+.osoba{
+    display: flex;
+}
+
+.zdj{
+    width: 20%;
+}
+
+.opis{
+}
+
+.linia{
+    width: 100%;
+    height: 3px;
+    background-color: #005B4F;
+}
