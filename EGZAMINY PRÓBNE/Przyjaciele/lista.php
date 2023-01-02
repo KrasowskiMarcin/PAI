@@ -2,7 +2,7 @@
 <?php
     $connection = mysqli_connect('localhost','root','','dane');        
 ?>
-<html>
+<html lang="pl">
     <head>
         <meta charset="UTF-8">
         <title>Lista przyjaciół</title>
