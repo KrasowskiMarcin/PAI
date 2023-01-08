@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="pl">
+    <head>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="styl.css">
+        <title>Miernik jakości hasła</title>
+    </head>
+    <body>
+        <header><h1><a href="index.html">Sprawdź swoje hasło</a></h1></header>
+
+        <section class="lewy">
+            <h2>Wybierz</h2>
+            <ol>
+                <li><a href="haslo.html">Sprawdź hasło</a></li>
+                <li><a href="zasady.html">Zasady tworzenia hasła</a></li>
+            </ol>
+        </section>
+        <section class="prawy" id="prawy">
+            <p>Twoje hasło:
+            <input type="password" id="pass">
+            <input type="submit" value="Sprawdź" onclick="checkPassword()"></p>
+
+            <section id="prawyTekst" hasło></section>
+        </section>
+
+        <footer>
+            <h3> Miernik jakości hasła</h3>
+            <br>
+            <p>Stronę opracował: Marcin Krasowski</p>
+        </footer>
+
+
+        <script>
+            function checkPassword(){
+                var pass = document.getElementById("pass").value;
+                // prawy blok
+                var prawy = document.getElementById("prawyTekst");
+
+                var zawieraCyfre = false;
+                // sprawdzenie czy zawiera cyfre
+                for(var i = 0; i < 10; i++){
+                    for(var j = 0; j < 10; j++){
+                        if(pass[i] == String(j)){
+                            zawieraCyfre = true;
+                            break;
+                        }
+                    }
+                    if(zawieraCyfre){
+                        break;
+                    }
+                }
+
+                if(pass.length >= 7 && zawieraCyfre){
+                    prawy.style.color = "green";
+                    prawy.innerHTML = "dobre";
+                }
+                else if((pass.length >= 4 && pass.length <=6) && zawieraCyfre){
+                    prawy.style.color = "blue";
+                    prawy.innerHTML = "średnie";
+                }
+                else if(pass == ''){
+                    prawy.style.color = "red";
+                    prawy.innerHTML = "WPISZ HASŁO!";
+                }
+                else{
+                    prawy.style.color = "yellow";
+                    prawy.innerHTML = "słabe";
+                }
+            }
+        </script>
+    </body>
+</html>
