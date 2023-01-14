@@ -49,11 +49,7 @@
                             echo "<p> Opis: $result[3] </p>";
                             echo "<p> Hobby: $result[5] </p>";
                         }
-
-                        
                     }
-                    
-
                 ?>
             </form>
         </section>
