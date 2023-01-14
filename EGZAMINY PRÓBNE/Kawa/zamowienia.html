@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="pl">
+    <head>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="styl4.css">
+        <title>Hurtownia</title>
+    </head>
+    <body>
+        <section id="logo">
+            <img src="logo.png">
+        </section>
+        <section id="menu">
+            <a href="index.html">Strona główna</a>
+            <a href="zamowienia.html">Zamówienia</a>
+            <a href="blog.html">Blog o kawie</a>
+            <a href="http://gatunki-kawy.pl" target="_blank">Odwiedź także</a>
+        </section>
+
+        <header> <h1>Hurtownia kawy</h1> </header>
+
+        <section id="lewy">
+            <h2>Oferta</h2>
+            <ol>
+                <li>Kawa palona Arabica</li>
+                <li>Kawa palona Robusta</li>
+                <li>Kawa bezkofeinowa</li>
+                <li>Kawa zielona</li>
+            </ol>
+        </section>
+        <section id="prawy">
+            Podaj numer kawy: <br>
+            <input type="number" id="numerKawy"> <br>
+            Podaj wagę w dekagramach <br>
+            <input type="number" id="wagaKawy"> <br>
+            <input type="submit" value="Zamów" onclick="oblicz()">
+            <p id="koszt"></p>
+        </section>
+
+        <footer> Stronę przygotował: Marcin Krasowski</footer>
+
+        <script>
+            function oblicz(){
+                var numerKawy = parseInt(document.getElementById('numerKawy').value);
+                var wagaKawy =  parseInt(document.getElementById('wagaKawy').value);
+
+                var cenaKawy = 0;
+
+                switch(numerKawy){
+                    case 1:
+                        cenaKawy = wagaKawy * 5;
+                        break;
+                    case 2:
+                    cenaKawy = wagaKawy * 6;
+                        break;
+                    case 3:
+                    cenaKawy = wagaKawy * 7;
+                        break;
+                    default:
+                        cenaKawy = 0;
+
+                }
+
+                document.getElementById('koszt').innerHTML = "Koszt zamówienia wynosi " + cenaKawy + " zł";
+
+
+            }
+        </script>
+    </body>
+</html>
